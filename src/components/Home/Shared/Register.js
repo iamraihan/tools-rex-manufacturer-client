@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
+import SocialLogin from './SocialLogin';
 
 
 const Register = () => {
@@ -100,7 +101,7 @@ const Register = () => {
 
                     </form>
                     <div class="divider">OR</div>
-                    <button className='btn btn-outline btn-primary '>Continue With Google</button>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div >
