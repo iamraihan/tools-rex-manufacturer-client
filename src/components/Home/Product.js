@@ -1,6 +1,7 @@
 import React from 'react';
 import PrimaryButton from './Shared/PrimaryButton';
 import { FaShoppingBag } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
     const { name, image, minimum, available, description, price } = product
@@ -16,7 +17,8 @@ const Product = ({ product }) => {
                 <p>If a dog chews shoes whose shoes does he choose?</p>
                 <p className='text-secondary font-bold'>Price: ${price}</p>
                 <div class="card-actions justify-center">
-                    <PrimaryButton> <FaShoppingBag className='mr-2 text-xl'></FaShoppingBag> Buy Now</PrimaryButton>
+                    {/* <PrimaryButton> <FaShoppingBag className='mr-2 text-xl'></FaShoppingBag> Buy Now</PrimaryButton> */}
+                    <Link to='/purchase '> <PrimaryButton> <FaShoppingBag className='mr-2 text-xl'></FaShoppingBag> Buy Now</PrimaryButton></Link>
                 </div>
             </div>
         </div>

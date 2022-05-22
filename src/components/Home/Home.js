@@ -20,8 +20,11 @@ const Home = () => {
                 </div>
             </div>
             <div className='py-28'>
-                <h2 className='text-center text-3xl uppercase font-semibold mb-'>Our Products</h2>
+                <h2 className='text-center text-3xl uppercase font-semibold mb-'>Our Tools</h2>
                 <Products></Products>
+                <div className='text-center mt-5'>
+                    <PrimaryButton>Load more tools</PrimaryButton>
+                </div>
             </div>
             <div className='py-28'>
                 <BusinessSummery></BusinessSummery>
