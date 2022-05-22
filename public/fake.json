@@ -1,0 +1,82 @@
+[
+    {
+        "available": 100,
+        "minimum": 50,
+        "image": "https://i.ibb.co/kQfSWxN/hammer.jpg",
+        "price": 150,
+        "name": "Claw Hammer",
+        "description": "A claw hammer is a type of hammer used mainly for pounding nails into, or extracting nails from, wood. Claw hammers usually weigh in the range 16 to 25 ounces. The head is made of steel and the handle of wood,"
+    },
+    {
+        "available": 1,
+        "minimum": 1,
+        "image": "https://i.ibb.co/TrL3g7H/soldering-iron.jpg",
+        "price": 179,
+        "name": "Soldering Iron",
+        "description": "Soldering iron kit comes with soldering iron, solder wire, desoldering pump, solder wick, stand with cleaning sponge, 5 different soldering tips, 3 anti-static tweezers, copper wire, magnifier, screwdrivers(electric pen), a PU carry bag to meet all your soldering project"
+    },
+    {
+        "available": 2,
+        "minimum": 2,
+        "image": "https://i.ibb.co/Z1PM9j6/dril.jpg",
+        "price": 374,
+        "name": "Drill Machine",
+        "description": "the definition, parts, types, and operations of the drilling machine you should know about. Also at the end of the article, I will give you the pdf download link."
+    },
+    {
+        "available": 3,
+        "minimum": 3,
+        "image": "https://i.ibb.co/LQDFJQR/Tape-measure.jpg",
+        "price": 208,
+        "name": "Tape Measure",
+        "description": "A tape measure, also called measuring tape, is a type of flexible ruler. Tape measures are made from a variety of materials, including fiber glass, plastic and cloth. They are among the most common measuring tools used today."
+    },
+    {
+        "available": 4,
+        "minimum": 4,
+        "image": "https://i.ibb.co/580ZwD9/Corkscrew-tool.jpg",
+        "price": 135,
+        "name": "Corkscrew Tool",
+        "description": "Durable High Quality and Easy to Open: Our polished finished corkscrew is made by premium zinc alloy, which ensures longer durability and stronger corrosion resistance. The lever principle applied structure saves your strength to open the wine easily."
+    },
+    {
+        "available": 5,
+        "minimum": 5,
+        "image": "https://i.ibb.co/wpyjF05/Diagonal-pliers.jpg",
+        "price": 358,
+        "name": "Diagonal Piiers",
+        "description": "Diagonal cutting pliers are used for cutting wire and small pins in areas that cannot be reached by larger cutting tools. Because the cutting edges are diagonally offset about 15 degrees"
+    },
+    {
+        "available": 6,
+        "minimum": 6,
+        "image": "https://i.ibb.co/fdMTjn8/coping-saw.jpg",
+        "price": 125,
+        "name": "Coping Saw",
+        "description": " a handsaw with a very narrow blade held under tension in a U-shaped frame and used especially for cutting curves in wood."
+    },
+    {
+        "available": 7,
+        "minimum": 7,
+        "image": "https://i.ibb.co/8gddvX0/circular-saw.jpg",
+        "price": 299,
+        "name": "Circular Saw",
+        "description": "A circular saw is a power-saw using a toothed or abrasive disc or blade to cut different materials using a rotary motion spinning around an arbor. A hole saw and ring saw also use a rotary motion but are different from a circular saw"
+    },
+    {
+        "available": 8,
+        "minimum": 8,
+        "image": "https://i.ibb.co/yQN8L2k/wrench.jpg",
+        "price": 34,
+        "name": "Wrench Tool",
+        "description": "wrench consists of a stout lever with a notch at one or both ends for gripping the bolt or nut in such a way that it can be twisted by a pull on the wrench at right angles to the axes of the lever and the bolt or nut."
+    },
+    {
+        "available": 9,
+        "minimum": 9,
+        "image": "https://i.ibb.co/YW6vp92/scrue-driver.jpg",
+        "price": 82,
+        "name": "Screw Driver",
+        "description": "screwdriver is a tool, manual or powered, used for driving screws. A typical simple screwdriver has a handle and a shaft, ending in a tip the user puts into the screw head before turning the handle"
+    }
+]

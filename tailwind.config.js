@@ -8,11 +8,11 @@ module.exports = {
 
           secondary: "#151515",
 
-          accent: "#e8e8e8",
+          accent: "#f7f7f7",
 
           neutral: "#C6FFE0",
 
-          info: "#E5E5E5",
+          info: "#eeeeee",
 
           success: "#36D399",
 

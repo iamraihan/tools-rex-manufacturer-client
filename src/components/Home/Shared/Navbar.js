@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import PrimaryButton from './PrimaryButton';
 
 const Navbar = () => {
     const menuItems = <>
@@ -9,7 +10,7 @@ const Navbar = () => {
         <li className='ml-2'><NavLink to='/others'>Others</NavLink></li>
     </>
     return (
-        <div class="navbar">
+        <div class="navbar max-w-screen-xl mx-auto">
             <div class="navbar-start">
                 <div class="dropdown">
                     <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -17,9 +18,6 @@ const Navbar = () => {
                     </label>
                     <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         {menuItems}
-                        {/* <li><a>Item 1</a></li>
-
-                        <li><a>Item 3</a></li> */}
                     </ul>
                 </div>
                 <Link to='/' class="btn btn-ghost normal-case text-2xl">Tools Rex</Link>
@@ -27,21 +25,12 @@ const Navbar = () => {
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
                     {menuItems}
-                    {/* <li tabindex="0">
-                        <a>
-                            Parent
-                            <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
-                        </a>
-                        <ul class="p-2">
-                            <li><a>Submenu 1</a></li>
-                            <li><a>Submenu 2</a></li>
-                        </ul>
-                    </li> */}
+
 
                 </ul>
             </div>
             <div class="navbar-end">
-                <a class="btn">Get started</a>
+                <PrimaryButton>Login</PrimaryButton>
             </div>
         </div>
     );
