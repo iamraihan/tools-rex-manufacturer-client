@@ -1,11 +1,36 @@
 import React from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import Loading from './Loading';
 import SocialLogin from './SocialLogin';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const location = useLocation()
+    const navigate = useNavigate()
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+    let from = location.state?.from?.pathname || "/";
+    if (loading) {
+        return <Loading></Loading>
+    }
+    let signError;
+    if (error) {
+        signError = <p className='text-error'><small>{error?.message}</small></p>
+    }
+    if (user) {
+        navigate(from, { replace: true });
+    }
+    const onSubmit = data => {
+        console.log(data)
+        signInWithEmailAndPassword(data.email, data.password)
+    };
     return (
         <div className='flex h-screen justify-center items-center bg-accent'>
             <div class="card w-96 bg-base-100 shadow-xl">
@@ -68,7 +93,7 @@ const Login = () => {
 
                             </label>
                         </div>
-
+                        {signError}
                         <input className='w-full max-w-xs btn btn-primary hover:text-white hover:bg-secondary' type="submit" value="Login" />
 
                         <p><small>New to doctors portal? <Link className='text-primary font-bold' to='/register'> Create an account</Link></small></p>

@@ -1,12 +1,41 @@
+import { async } from '@firebase/util';
 import React from 'react';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import Loading from './Loading';
 import SocialLogin from './SocialLogin';
 
 
 const Register = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const location = useLocation()
+    const navigate = useNavigate()
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+    let from = location.state?.from?.pathname || "/";
+    if (loading || updating) {
+        return <Loading></Loading>
+    }
+    let signError;
+    if (error || updateError) {
+        signError = <p className='text-error'><small>{error?.message}</small></p>
+    }
+    if (user) {
+        navigate(from, { replace: true });
+    }
+    const onSubmit = async data => {
+        await createUserWithEmailAndPassword(data.email, data.password)
+        await updateProfile({ displayName: data.name });
+        console.log(data);
+        reset()
+    }
     return (
         <div className='flex h-screen justify-center items-center bg-accent'>
             <div class="card w-96 bg-base-100 shadow-xl">
@@ -93,8 +122,8 @@ const Register = () => {
 
                             </label>
                         </div>
-
-                        <input className='w-full max-w-xs btn btn-primary hover:text-white hover:bg-secondary' type="submit" value="Login" />
+                        {signError}
+                        <input className='w-full max-w-xs btn btn-primary hover:text-white hover:bg-secondary' type="submit" value="SignUp" />
 
                         <p><small>Already Have an account? <Link className='text-primary font-bold' to='/login'> Please Login!</Link></small></p>
 
