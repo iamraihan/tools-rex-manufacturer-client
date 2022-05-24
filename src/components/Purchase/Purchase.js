@@ -76,6 +76,7 @@ const Purchase = () => {
         //         setUpdateQuantity(data)
         //         event.target.reset()
         //     })
+        event.target.reset()
     }
     return (
         <div className='py-12'>

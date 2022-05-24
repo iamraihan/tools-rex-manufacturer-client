@@ -15,6 +15,13 @@ const Navbar = () => {
         <li className='ml-2'><NavLink to='/about'>About</NavLink></li>
         <li className='ml-2'><NavLink to='/blog'>Blog</NavLink></li>
         <li className='ml-2'><NavLink to='/others'>Others</NavLink></li>
+        {
+
+            user && <li className='ml-2'><NavLink to='/dashboard'>Dashboard</NavLink></li>
+        }
+        {
+            user ? <button className='ml-2' onClick={logout}><PrimaryButton>Logout</PrimaryButton></button> : <Link to='/login'><PrimaryButton>Login</PrimaryButton></Link>
+        }
     </>
     return (
         <div class="navbar max-w-screen-xl mx-auto">
@@ -37,9 +44,13 @@ const Navbar = () => {
                 </ul>
             </div>
             <div class="navbar-end">
-                {
+                {/* {
                     user ? <button onClick={logout}><PrimaryButton>Logout</PrimaryButton></button> : <Link to='/login'><PrimaryButton>Login</PrimaryButton></Link>
-                }
+                } */}
+                <label tabindex="1" for="dashboard-sidebar" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+
             </div>
         </div>
     );

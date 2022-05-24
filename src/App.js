@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Dashboard from './components/Dashboard/Dashboard';
 import Home from './components/Home/Home';
 import Footer from './components/Home/Shared/Footer';
 import Login from './components/Home/Shared/Login';
@@ -21,6 +22,9 @@ function App() {
         }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register />}></Route>
+        <Route path='/dashboard' element={<RequireAuth>
+          <Dashboard></Dashboard>
+        </RequireAuth>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
