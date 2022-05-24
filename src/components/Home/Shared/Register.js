@@ -3,6 +3,7 @@ import React from 'react';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../../hooks/useToken';
 import auth from '../../firebase.init';
 import Loading from './Loading';
 import SocialLogin from './SocialLogin';
@@ -19,6 +20,7 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+    const [token] = useToken(user)
     let from = location.state?.from?.pathname || "/";
     if (loading || updating) {
         return <Loading></Loading>
@@ -33,7 +35,6 @@ const Register = () => {
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName: data.name });
-        console.log(data);
         reset()
     }
     return (
