@@ -121,7 +121,7 @@ const Purchase = () => {
                         </div>
                     </form>
 
-                    <p className='text-xl'><span className='font-bold'>Price:</span> ${product.price / product.available * (updateQuantity + product.minimum)}</p>
+                    <p className='text-xl'><span className='font-bold'>Price:</span> ${(product.price / product.available * (updateQuantity + product.minimum)).toFixed(2)}</p>
                     <div class="card-actions justify-center">
                         {/* <PrimaryButton>Confirm Order</PrimaryButton> */}
                         <button disabled={(updateQuantity + product.minimum) > product.available} class="btn btn-primary">Confirm Order</button>
