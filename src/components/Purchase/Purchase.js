@@ -78,6 +78,37 @@ const Purchase = () => {
         //     })
         event.target.reset()
     }
+
+    const confirmOrder = event => {
+        event.preventDefault()
+        const address = event.target.address.value
+        const phone = event.target.phone.value
+
+        // console.log(address, phone);
+        const order = {
+            userName: user?.displayName,
+            email: user?.email,
+            productName: product.name,
+            quantity: product.minimum + updateQuantity,
+            price: (product.price / product.available * (updateQuantity + product.minimum)).toFixed(2),
+            address: address,
+            phone: phone
+        }
+        console.log(order);
+        fetch('http://localhost:5000/order', {
+            method: 'POST',
+            body: JSON.stringify(order),
+            headers: {
+                'Content-type': 'application/json'
+            },
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                event.target.reset()
+            })
+    }
+
     return (
         <div className='py-12'>
             <div class="card max-w-xl bg-base-100 shadow-xl image-full mx-auto">
@@ -123,8 +154,33 @@ const Purchase = () => {
 
                     <p className='text-xl'><span className='font-bold'>Price:</span> ${(product.price / product.available * (updateQuantity + product.minimum)).toFixed(2)}</p>
                     <div class="card-actions justify-center">
+                        {/* Address Phone  */}
+                        <form className=' ' onSubmit={confirmOrder}>
+                            <div class="form-control w-full max-w-xs">
+                                <label class="label">
+                                    <span class="label-text"><span style={{ color: ['#005c29'] }} className='font-bold'>Address</span></span>
+                                </label>
+                                <input type="text" placeholder="Address" name='address' class="input input-bordered w-full max-w-xs" />
+                                {/* <label class="label">
+                                {<span class="label-text-alt">Alt label</span>}
+                            </label> */}
+                            </div>
+                            <div class="form-control w-full max-w-xs">
+                                <label class="label">
+                                    <span class="label-text"><span style={{ color: ['#005c29'] }} className='font-bold'>Phone</span></span>
+                                </label>
+                                <input type="text" placeholder="Phone" name='phone' class="input input-bordered w-full max-w-xs" />
+                                {/* <label class="label">
+                                {<span class="label-text-alt">Alt label</span>}
+                            </label> */}
+                            </div>
+                            <div>
+                                <input disabled={(updateQuantity + product.minimum) > product.available} className='btn btn-primary w-full  max-w-xs mt-5' type="submit" value="Confirm Order" />
+                            </div>
+                        </form>
+
                         {/* <PrimaryButton>Confirm Order</PrimaryButton> */}
-                        <button disabled={(updateQuantity + product.minimum) > product.available} class="btn btn-primary">Confirm Order</button>
+                        {/* <button disabled={(updateQuantity + product.minimum) > product.available} class="btn btn-primary">Confirm Order</button> */}
                     </div>
                 </div>
             </div>
