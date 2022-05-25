@@ -5,6 +5,7 @@ import Loading from '../Home/Shared/Loading';
 
 const MyProfile = () => {
     const [user, loading, error] = useAuthState(auth);
+    console.log(user);
     const email = user?.email
 
     const { data: profile, isLoading, refetch } = useQuery('profile', () => fetch(`http://localhost:5000/profile/${email}`, {
@@ -16,7 +17,6 @@ const MyProfile = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
-    // console.log(userProfile[0]);
     const updateProfileHandler = event => {
         event.preventDefault()
         const name = user?.displayName
@@ -89,19 +89,19 @@ const MyProfile = () => {
                                 <label class="label">
                                     <span class="label-text">Education</span>
                                 </label>
-                                <input type="text" name='education' placeholder="Education" class="input input-bordered w-full max-w-xs" />
+                                <input type="text" name='education' placeholder="Education" class="input input-bordered w-full max-w-xs" required />
                             </div>
                             <div class="form-control w-full max-w-xs mx-auto">
                                 <label class="label">
                                     <span class="label-text">Location</span>
                                 </label>
-                                <input type="text" name='location' placeholder="Location" class="input input-bordered w-full max-w-xs" />
+                                <input type="text" name='location' placeholder="Location" class="input input-bordered w-full max-w-xs" required />
                             </div>
                             <div class="form-control w-full max-w-xs mx-auto">
                                 <label class="label">
                                     <span class="label-text">Phone</span>
                                 </label>
-                                <input type="text" name='phone' placeholder="Phone" class="input input-bordered w-full max-w-xs" />
+                                <input type="text" name='phone' placeholder="Phone" class="input input-bordered w-full max-w-xs" required />
                             </div>
                             <div class="form-control w-full max-w-xs mx-auto">
                                 <label class="label">

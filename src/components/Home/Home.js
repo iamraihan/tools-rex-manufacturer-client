@@ -1,6 +1,7 @@
 import React from 'react';
 import BusinessSummery from './BusinessSummery';
 import Products from './Products';
+import Reviews from './Reviews';
 import PrimaryButton from './Shared/PrimaryButton';
 
 const Home = () => {
@@ -25,6 +26,9 @@ const Home = () => {
                 <div className='text-center mt-5'>
                     <PrimaryButton>Load more tools</PrimaryButton>
                 </div>
+            </div>
+            <div className='py-28'>
+                <Reviews></Reviews>
             </div>
             <div className='py-28'>
                 <BusinessSummery></BusinessSummery>
