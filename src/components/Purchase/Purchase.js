@@ -160,7 +160,7 @@ const Purchase = () => {
                                 <label class="label">
                                     <span class="label-text"><span style={{ color: ['#005c29'] }} className='font-bold'>Address</span></span>
                                 </label>
-                                <input type="text" placeholder="Address" name='address' class="input input-bordered w-full max-w-xs" />
+                                <input type="text" placeholder="Address" name='address' class="input input-bordered w-full max-w-xs" required />
                                 {/* <label class="label">
                                 {<span class="label-text-alt">Alt label</span>}
                             </label> */}
@@ -169,7 +169,7 @@ const Purchase = () => {
                                 <label class="label">
                                     <span class="label-text"><span style={{ color: ['#005c29'] }} className='font-bold'>Phone</span></span>
                                 </label>
-                                <input type="text" placeholder="Phone" name='phone' class="input input-bordered w-full max-w-xs" />
+                                <input type="text" placeholder="Phone" name='phone' class="input input-bordered w-full max-w-xs" required />
                                 {/* <label class="label">
                                 {<span class="label-text-alt">Alt label</span>}
                             </label> */}

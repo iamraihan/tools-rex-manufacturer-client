@@ -29,7 +29,7 @@ const Register = () => {
     if (error || updateError) {
         signError = <p className='text-error'><small>{error?.message}</small></p>
     }
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     }
     const onSubmit = async data => {

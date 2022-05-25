@@ -26,7 +26,7 @@ const Login = () => {
     if (error) {
         signError = <p className='text-error'><small>{error?.message}</small></p>
     }
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     }
     const onSubmit = data => {

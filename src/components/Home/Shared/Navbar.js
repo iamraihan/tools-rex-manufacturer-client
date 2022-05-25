@@ -9,6 +9,7 @@ const Navbar = () => {
     const [user, loading, error] = useAuthState(auth);
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken')
     };
     const menuItems = <>
         <li className='ml-2'><NavLink to='/'>Home</NavLink></li>

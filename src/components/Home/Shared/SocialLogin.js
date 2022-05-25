@@ -14,7 +14,7 @@ const SocialLogin = () => {
     if (loading) {
         return <Loading></Loading>
     }
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     }
     return (
