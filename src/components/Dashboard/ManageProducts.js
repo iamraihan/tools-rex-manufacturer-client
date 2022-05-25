@@ -6,7 +6,7 @@ import ManageProductsDetails from './ManageProductsDetails';
 const ManageProducts = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('http://localhost:5000/allProducts')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
