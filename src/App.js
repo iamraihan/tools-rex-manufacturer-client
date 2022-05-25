@@ -3,6 +3,7 @@ import './App.css';
 import AddaReview from './components/Dashboard/AddaReview';
 import Dashboard from './components/Dashboard/Dashboard';
 import MakeAdmin from './components/Dashboard/MakeAdmin';
+import ManageProducts from './components/Dashboard/ManageProducts';
 import MyOrders from './components/Dashboard/MyOrders';
 import MyProfile from './components/Dashboard/MyProfile';
 import Home from './components/Home/Home';
@@ -10,6 +11,7 @@ import Footer from './components/Home/Shared/Footer';
 import Login from './components/Home/Shared/Login';
 import Navbar from './components/Home/Shared/Navbar';
 import Register from './components/Home/Shared/Register';
+import RequireAdmin from './components/Home/Shared/RequireAdmin';
 import RequireAuth from './components/Home/Shared/RequireAuth';
 import Purchase from './components/Purchase/Purchase';
 
@@ -32,7 +34,14 @@ function App() {
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='add-review' element={<AddaReview></AddaReview>}></Route>
           <Route path='my-profile' element={<MyProfile></MyProfile>}></Route>
-          <Route path='make-admin' element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path='make-admin' element={<RequireAdmin>
+            <MakeAdmin></MakeAdmin>
+          </RequireAdmin>}>
+          </Route>
+          <Route path='manage-products' element={<RequireAdmin>
+            <ManageProducts></ManageProducts>
+          </RequireAdmin>}>
+          </Route>
         </Route>
       </Routes>
       <Footer></Footer>
