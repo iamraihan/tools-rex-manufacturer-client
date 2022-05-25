@@ -5,8 +5,9 @@ import Loading from '../Home/Shared/Loading';
 
 const MyProfile = () => {
     const [user, loading, error] = useAuthState(auth);
+    const email = user?.email
 
-    const { data: profile, isLoading, refetch } = useQuery('profile', () => fetch('http://localhost:5000/profile', {
+    const { data: profile, isLoading, refetch } = useQuery('profile', () => fetch(`http://localhost:5000/profile/${email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -53,12 +54,12 @@ const MyProfile = () => {
             <div class="hero  bg-base-200">
                 <div class="hero-content text-center">
                     <div class="max-w-md">
-                        <h1 class="text-5xl font-bold">{profile[0]?.name}</h1>
-                        <p class="pt-3 text-2xl font-semibold">Email: {profile[0]?.email}</p>
-                        <p class="pt-3 text-2xl font-semibold">Education : {profile[0]?.education}</p>
-                        <p class="pt-3 text-2xl font-semibold">Location : {profile[0]?.location}</p>
-                        <p class="pt-3 text-2xl font-semibold">Phone : {profile[0]?.phone}</p>
-                        <p className='py-3 text-2xl font-semibold'><a href={profile[0]?.linkedin}>Linkedin</a></p>
+                        <h1 class="text-5xl font-bold">{user?.displayName}</h1>
+                        <p class="pt-3 text-2xl font-semibold">Email: {user?.email}</p>
+                        <p class="pt-3 text-2xl font-semibold">Education : {profile?.education}</p>
+                        <p class="pt-3 text-2xl font-semibold">Location : {profile?.location}</p>
+                        <p class="pt-3 text-2xl font-semibold">Phone : {profile?.phone}</p>
+                        <p className='py-3 text-2xl font-semibold'><a href={profile?.linkedin}>Linkedin</a></p>
 
                     </div>
                 </div>
