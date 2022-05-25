@@ -1,21 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Home/Shared/Loading';
+import MakeAdminDetails from './MakeAdminDetails';
 
 const MakeAdmin = () => {
-    // const [makeAdmin, setMakeAdmin] = useState([])
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/users', {
-    //         method: 'GET',
-    //         headers: {
-    //             authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    //         }
 
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => setMakeAdmin(data))
-
-    // }, [])
 
     const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
         method: 'GET',
@@ -27,9 +15,25 @@ const MakeAdmin = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
-            <h2>{users.length}</h2>
-            {/* <h2>{makeAdmin.length}</h2> */}
+        <div class="overflow-x-auto">
+            <table class="table w-full">
+                {/* <!-- head --> */}
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Email</th>
+                        <th>Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {/* <!-- row 1 --> */}
+                    {
+                        users.map((user, index) => <MakeAdminDetails key={user._id} user={user} index={index} ></MakeAdminDetails>)
+                    }
+
+                </tbody>
+            </table>
         </div>
     );
 };
