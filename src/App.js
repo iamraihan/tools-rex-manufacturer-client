@@ -8,6 +8,7 @@ import ManageAllOrders from './components/Dashboard/ManageAllOrders';
 import ManageProducts from './components/Dashboard/ManageProducts';
 import MyOrders from './components/Dashboard/MyOrders';
 import MyProfile from './components/Dashboard/MyProfile';
+import Payment from './components/Dashboard/Payment';
 import Home from './components/Home/Home';
 import Footer from './components/Home/Shared/Footer';
 import Login from './components/Home/Shared/Login';
@@ -36,6 +37,7 @@ function App() {
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='add-review' element={<AddaReview></AddaReview>}></Route>
           <Route path='my-profile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='make-admin' element={<RequireAdmin>
             <MakeAdmin></MakeAdmin>
           </RequireAdmin>}>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const MyOrderList = ({ order, index, setDeleteOrder }) => {
     const { _id, productName, quantity, price, } = order
@@ -24,7 +25,7 @@ const MyOrderList = ({ order, index, setDeleteOrder }) => {
                             <td>{quantity}</td>
                             <td>{price}</td>
                             <td>
-                                <button className='btn btn-success mr-3'>Pay</button>
+                                <Link to={`/dashboard/payment/${_id}`}> <button className='btn btn-success mr-3'>Pay</button></Link>
                                 <label onClick={() => { setDeleteOrder(order) }} for="order-delete-confirmation" class="btn btn-error">Cancel</label>
 
                             </td>
