@@ -43,31 +43,31 @@ const AddaReview = () => {
         <div>
             <h2>Give a review about Us</h2>
             <form onSubmit={reviewHandler}>
-                <div class="form-control w-full max-w-xs mx-auto">
-                    <label class="label">
-                        <span class="label-text">Name</span>
+                <div className="form-control w-full max-w-xs mx-auto">
+                    <label className="label">
+                        <span className="label-text">Name</span>
                     </label>
-                    <input type="text" name='name' value={user?.displayName} placeholder="Name" class="input input-bordered w-full max-w-xs" disabled />
+                    <input type="text" name='name' value={user?.displayName} placeholder="Name" className="input input-bordered w-full max-w-xs" disabled />
                 </div>
-                <div class="form-control w-full max-w-xs mx-auto">
-                    <label class="label">
-                        <span class="label-text">Title</span>
+                <div className="form-control w-full max-w-xs mx-auto">
+                    <label className="label">
+                        <span className="label-text">Title</span>
                     </label>
-                    <input type="text" name='title' placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-                </div>
-
-                <div class="form-control w-full max-w-xs mx-auto">
-                    <label class="label">
-                        <span class="label-text">Review Details</span>
-                    </label>
-                    <textarea class="textarea textarea-bordered h-24" name='detailsTextarea' placeholder="Review Details"></textarea>
+                    <input type="text" name='title' placeholder="Type here" className="input input-bordered w-full max-w-xs" />
                 </div>
 
-                <div class="form-control w-full max-w-xs mx-auto">
-                    <label class="label">
-                        <span class="label-text">Rating</span>
+                <div className="form-control w-full max-w-xs mx-auto">
+                    <label className="label">
+                        <span className="label-text">Review Details</span>
                     </label>
-                    <input type="number" name='rating' placeholder="Rating" class="input input-bordered w-full max-w-xs" />
+                    <textarea className="textarea textarea-bordered h-24" name='detailsTextarea' placeholder="Review Details"></textarea>
+                </div>
+
+                <div className="form-control w-full max-w-xs mx-auto">
+                    <label className="label">
+                        <span className="label-text">Rating</span>
+                    </label>
+                    <input type="number" name='rating' placeholder="Rating" className="input input-bordered w-full max-w-xs" />
                 </div>
                 <div className='w-full max-w-xs mx-auto mt-5'>
                     <input className='btn btn-primary w-full max-w-xs ' type="submit" value="Submit" />

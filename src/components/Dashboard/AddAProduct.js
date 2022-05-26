@@ -24,7 +24,7 @@ const AddAProduct = () => {
             description
         }
 
-        fetch('https://salty-lake-19490.herokuapp.com/productAdd', {
+        fetch('http://localhost:5000/productAdd', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

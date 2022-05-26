@@ -4,21 +4,21 @@ import { FaPlane, FaMoneyCheckAlt, FaGift, FaHeadphonesAlt } from "react-icons/f
 const PromoBox = () => {
     return (
         <div className='max-w-screen-xl mx-auto bg-warning shadow-xl rounded-lg grid lg:grid-cols-4 md:grid-cols-2 gap-5'>
-            <div class=" flex items-center p-5">
+            <div className=" flex items-center p-5">
                 <div><FaPlane className='text-5xl text-secondary mr-3'></FaPlane></div>
                 <div>
                     <h2 className='text-secondary text-xl'>FREE SHIPPING WORLDWIDE</h2>
                     <p className='text-secondary'>On Order $1000</p>
                 </div>
             </div>
-            <div class=" flex items-center p-5 ">
+            <div className=" flex items-center p-5 ">
                 <div><FaMoneyCheckAlt className='text-5xl text-secondary mr-3'></FaMoneyCheckAlt></div>
                 <div>
                     <h2 className='text-secondary text-xl'>CASH ON DELIVERY</h2>
                     <p className='text-secondary'>100% money back guarantee</p>
                 </div>
             </div>
-            <div class=" flex items-center p-5 ">
+            <div className=" flex items-center p-5 ">
                 <div><FaGift className='text-5xl text-secondary mr-3'></FaGift></div>
                 <div>
                     <h2 className='text-secondary text-xl'>SPECIAL GIFT CARD</h2>
@@ -26,7 +26,7 @@ const PromoBox = () => {
                     </p>
                 </div>
             </div>
-            <div class=" flex items-center p-5 ">
+            <div className=" flex items-center p-5 ">
                 <div><FaHeadphonesAlt className='text-5xl text-secondary mr-3'></FaHeadphonesAlt></div>
                 <div>
                     <h2 className='text-secondary text-xl'>24/7 CUSTOMER SERVICE</h2>

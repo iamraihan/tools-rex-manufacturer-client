@@ -18,18 +18,18 @@ const DeleteOrderConfirmation = ({ deleteOrder, setDeleteOrder }) => {
     return (
         <div>
             {/* <!-- The button to open modal --> */}
-            {/* <label for="order-delete-confirmation" class="btn modal-button">open modal</label> */}
+            {/* <label for="order-delete-confirmation" className="btn modal-button">open modal</label> */}
 
             {/* <!-- Put this part before </body> tag --> */}
-            <input type="checkbox" id="order-delete-confirmation" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg">Are you sure want to cancel {productName}</h3>
-                    <p class="py-4">If you sure want to cancel your {productName} so click yes! </p>
-                    <div class="modal-action">
+            <input type="checkbox" id="order-delete-confirmation" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">Are you sure want to cancel {productName}</h3>
+                    <p className="py-4">If you sure want to cancel your {productName} so click yes! </p>
+                    <div className="modal-action">
                         <button onClick={() => deleteHandler(_id)} className='btn btn-error'>Yes</button>
 
-                        <label for="order-delete-confirmation" class="btn btn-success">No</label>
+                        <label htmlFor="order-delete-confirmation" className="btn btn-success">No</label>
                     </div>
                 </div>
             </div>

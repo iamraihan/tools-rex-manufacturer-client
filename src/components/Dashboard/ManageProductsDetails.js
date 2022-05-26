@@ -19,8 +19,8 @@ const ManageProductsDetails = ({ product, index }) => {
     return (
         <tr>
             <th>{index + 1}</th>
-            <td><div class="avatar">
-                <div class="w-20 rounded">
+            <td><div className="avatar">
+                <div className="w-20 rounded">
                     <img src={image} alt={name} />
                 </div>
             </div></td>

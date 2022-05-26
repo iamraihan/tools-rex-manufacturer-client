@@ -51,63 +51,63 @@ const MyProfile = () => {
     }
     return (
         <div>
-            <div class="hero  bg-base-200">
-                <div class="hero-content text-center">
-                    <div class="max-w-md">
-                        <h1 class="text-5xl font-bold">{user?.displayName}</h1>
-                        <p class="pt-3 text-2xl font-semibold">Email: {user?.email}</p>
-                        <p class="pt-3 text-2xl font-semibold">Education : {profile?.education}</p>
-                        <p class="pt-3 text-2xl font-semibold">Location : {profile?.location}</p>
-                        <p class="pt-3 text-2xl font-semibold">Phone : {profile?.phone}</p>
+            <div className="hero  bg-base-200">
+                <div className="hero-content text-center">
+                    <div className="max-w-md">
+                        <h1 className="text-5xl font-bold">{user?.displayName}</h1>
+                        <p className="pt-3 text-2xl font-semibold">Email: {user?.email}</p>
+                        <p className="pt-3 text-2xl font-semibold">Education : {profile?.education}</p>
+                        <p className="pt-3 text-2xl font-semibold">Location : {profile?.location}</p>
+                        <p className="pt-3 text-2xl font-semibold">Phone : {profile?.phone}</p>
                         <p className='py-3 text-2xl font-semibold'><a href={profile?.linkedin}>Linkedin</a></p>
 
                     </div>
                 </div>
             </div>
-            <div class="collapse">
-                <input type="checkbox" class="peer" />
-                <div class="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content btn btn-primary">
+            <div className="collapse">
+                <input type="checkbox" className="peer" />
+                <div className="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content btn btn-primary">
                     Update Your Profile Information
                 </div>
-                <div class="collapse-content bg-secondary text-primary-content peer-checked:bg-white peer-checked:text-primary-content">
+                <div className="collapse-content bg-secondary text-primary-content peer-checked:bg-white peer-checked:text-primary-content">
                     <div>
                         <h1 className='text-3xl font-bold text-center mb-5'>Update Profile</h1>
                         <form onSubmit={updateProfileHandler}>
-                            <div class="form-control w-full max-w-xs mx-auto">
-                                <label class="label">
-                                    <span class="label-text">Name</span>
+                            <div className="form-control w-full max-w-xs mx-auto">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" name='name' value={user?.displayName} placeholder="Type here" class="input input-bordered w-full max-w-xs" disabled />
+                                <input type="text" name='name' value={user?.displayName} placeholder="Type here" className="input input-bordered w-full max-w-xs" disabled />
                             </div>
-                            <div class="form-control w-full max-w-xs mx-auto">
-                                <label class="label">
-                                    <span class="label-text">Email</span>
+                            <div className="form-control w-full max-w-xs mx-auto">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" name='email' value={user?.email} placeholder="Type here" class="input input-bordered w-full max-w-xs" disabled />
+                                <input type="text" name='email' value={user?.email} placeholder="Type here" className="input input-bordered w-full max-w-xs" disabled />
                             </div>
-                            <div class="form-control w-full max-w-xs mx-auto">
-                                <label class="label">
-                                    <span class="label-text">Education</span>
+                            <div className="form-control w-full max-w-xs mx-auto">
+                                <label className="label">
+                                    <span className="label-text">Education</span>
                                 </label>
-                                <input type="text" name='education' placeholder="Education" class="input input-bordered w-full max-w-xs" required />
+                                <input type="text" name='education' placeholder="Education" className="input input-bordered w-full max-w-xs" required />
                             </div>
-                            <div class="form-control w-full max-w-xs mx-auto">
-                                <label class="label">
-                                    <span class="label-text">Location</span>
+                            <div className="form-control w-full max-w-xs mx-auto">
+                                <label className="label">
+                                    <span className="label-text">Location</span>
                                 </label>
-                                <input type="text" name='location' placeholder="Location" class="input input-bordered w-full max-w-xs" required />
+                                <input type="text" name='location' placeholder="Location" className="input input-bordered w-full max-w-xs" required />
                             </div>
-                            <div class="form-control w-full max-w-xs mx-auto">
-                                <label class="label">
-                                    <span class="label-text">Phone</span>
+                            <div className="form-control w-full max-w-xs mx-auto">
+                                <label className="label">
+                                    <span className="label-text">Phone</span>
                                 </label>
-                                <input type="text" name='phone' placeholder="Phone" class="input input-bordered w-full max-w-xs" required />
+                                <input type="text" name='phone' placeholder="Phone" className="input input-bordered w-full max-w-xs" required />
                             </div>
-                            <div class="form-control w-full max-w-xs mx-auto">
-                                <label class="label">
-                                    <span class="label-text">Linkedin</span>
+                            <div className="form-control w-full max-w-xs mx-auto">
+                                <label className="label">
+                                    <span className="label-text">Linkedin</span>
                                 </label>
-                                <input type="text" name='linkedin' placeholder="Linkedin" class="input input-bordered w-full max-w-xs" />
+                                <input type="text" name='linkedin' placeholder="Linkedin" className="input input-bordered w-full max-w-xs" />
                             </div>
                             <div className='w-full max-w-xs mx-auto mt-5'>
                                 <input className='btn btn-primary w-full max-w-xs ' type="submit" value="Update Profile" />

@@ -111,25 +111,25 @@ const Purchase = () => {
 
     return (
         <div className='py-12'>
-            <div class="card max-w-xl bg-base-100 shadow-xl image-full mx-auto">
+            <div className="card max-w-xl bg-base-100 shadow-xl image-full mx-auto">
                 <figure><img src={product.image} alt={product.name} /></figure>
-                <div class="card-body">
+                <div className="card-body">
                     <h1 className='text-center text-2xl md:text-4xl mb-3 font-bold'>Order Confirmation!!</h1>
                     <h1 className='text-center font-semibold text-2xl'><span className='font-bold'>Name:</span> {user?.displayName} </h1>
                     <h1 className='text-center font-semibold text-2xl mb-3'><span className='font-bold'>Email:</span> {user?.email} </h1>
-                    <h2 class="text-xl"><span className='font-bold'>Product Name</span>: {product.name}</h2>
+                    <h2 className="text-xl"><span className='font-bold'>Product Name</span>: {product.name}</h2>
                     <p className='text-xl'><span className='font-bold'>Available:</span> {product.available}</p>
                     <p className='text-xl'><span className='font-bold'>My Quantity:</span> {product.minimum + updateQuantity}</p>
 
                     <form className='flex items-center ' onSubmit={updateHandler}>
-                        <div class="form-control w-2/4 max-w-xs">
-                            <label class="label">
-                                <span class="label-text"><span style={{ color: ['#005c29'] }} className='font-bold'>Increase Quantity?</span></span>
+                        <div className="form-control w-2/4 max-w-xs">
+                            <label className="label">
+                                <span className="label-text"><span style={{ color: ['#005c29'] }} className='font-bold'>Increase Quantity?</span></span>
                             </label>
-                            <input type="number" placeholder="Increase Quantity" name='quantity' class="input input-bordered w-full max-w-xs" />
-                            <label class="label">
+                            <input type="number" placeholder="Increase Quantity" name='quantity' className="input input-bordered w-full max-w-xs" />
+                            <label className="label">
                                 {errorUpdate}
-                                {/* {<span class="label-text-alt">Alt label</span>} */}
+                                {/* {<span className="label-text-alt">Alt label</span>} */}
                             </label>
                         </div>
                         <div>
@@ -138,13 +138,13 @@ const Purchase = () => {
                     </form>
                     {/* decrease  */}
                     <form className='flex items-center ' onSubmit={decreaseHandler}>
-                        <div class="form-control w-2/4 max-w-xs">
-                            <label class="label">
-                                <span class="label-text"><span style={{ color: ['#005c29'] }} className='font-bold'>Decrease Quantity?</span></span>
+                        <div className="form-control w-2/4 max-w-xs">
+                            <label className="label">
+                                <span className="label-text"><span style={{ color: ['#005c29'] }} className='font-bold'>Decrease Quantity?</span></span>
                             </label>
-                            <input type="number" placeholder="Decrease Quantity" name='quantity' class="input input-bordered w-full max-w-xs" />
-                            <label class="label">
-                                {/* {<span class="label-text-alt">Alt label</span>} */}
+                            <input type="number" placeholder="Decrease Quantity" name='quantity' className="input input-bordered w-full max-w-xs" />
+                            <label className="label">
+                                {/* {<span className="label-text-alt">Alt label</span>} */}
                             </label>
                         </div>
                         <div>
@@ -153,25 +153,25 @@ const Purchase = () => {
                     </form>
 
                     <p className='text-xl'><span className='font-bold'>Price:</span> ${(product.price / product.available * (updateQuantity + product.minimum)).toFixed(2)}</p>
-                    <div class="card-actions justify-center">
+                    <div className="card-actions justify-center">
                         {/* Address Phone  */}
                         <form className=' ' onSubmit={confirmOrder}>
-                            <div class="form-control w-full max-w-xs">
-                                <label class="label">
-                                    <span class="label-text"><span style={{ color: ['#005c29'] }} className='font-bold'>Address</span></span>
+                            <div className="form-control w-full max-w-xs">
+                                <label className="label">
+                                    <span className="label-text"><span style={{ color: ['#005c29'] }} className='font-bold'>Address</span></span>
                                 </label>
-                                <input type="text" placeholder="Address" name='address' class="input input-bordered w-full max-w-xs" required />
-                                {/* <label class="label">
-                                {<span class="label-text-alt">Alt label</span>}
+                                <input type="text" placeholder="Address" name='address' className="input input-bordered w-full max-w-xs" required />
+                                {/* <label className="label">
+                                {<span className="label-text-alt">Alt label</span>}
                             </label> */}
                             </div>
-                            <div class="form-control w-full max-w-xs">
-                                <label class="label">
-                                    <span class="label-text"><span style={{ color: ['#005c29'] }} className='font-bold'>Phone</span></span>
+                            <div className="form-control w-full max-w-xs">
+                                <label className="label">
+                                    <span className="label-text"><span style={{ color: ['#005c29'] }} className='font-bold'>Phone</span></span>
                                 </label>
-                                <input type="text" placeholder="Phone" name='phone' class="input input-bordered w-full max-w-xs" required />
-                                {/* <label class="label">
-                                {<span class="label-text-alt">Alt label</span>}
+                                <input type="text" placeholder="Phone" name='phone' className="input input-bordered w-full max-w-xs" required />
+                                {/* <label className="label">
+                                {<span className="label-text-alt">Alt label</span>}
                             </label> */}
                             </div>
                             <div>
@@ -180,7 +180,7 @@ const Purchase = () => {
                         </form>
 
                         {/* <PrimaryButton>Confirm Order</PrimaryButton> */}
-                        {/* <button disabled={(updateQuantity + product.minimum) > product.available} class="btn btn-primary">Confirm Order</button> */}
+                        {/* <button disabled={(updateQuantity + product.minimum) > product.available} className="btn btn-primary">Confirm Order</button> */}
                     </div>
                 </div>
             </div>

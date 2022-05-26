@@ -22,7 +22,7 @@ const MakeAdminDetails = ({ user, index, refetch }) => {
             <td>
                 {role !== 'admin' && <button onClick={makeNewAdmin} className='btn btn-primary btn-xs'>Make Admin</button>}
             </td>
-            <td><button class="btn btn-xs">Remove Admin</button></td>
+            <td><button className="btn btn-xs">Remove Admin</button></td>
 
         </tr>
     );

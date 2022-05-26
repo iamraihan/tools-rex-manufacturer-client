@@ -29,13 +29,13 @@ const BusinessSummery = () => {
                     </div>
                 </div>
             </div>
-            <div class="card md:w-2/4 mx-auto mt-10 bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="card-title">Have any query?</h2>
+            <div className="card md:w-2/4 mx-auto mt-10 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="card-title">Have any query?</h2>
                     <p>Contact Us.</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Request for a quote</button>
-                        <button class="btn btn-secondary">Contact Us</button>
+                    <div className="card-actions justify-end">
+                        <button className="btn btn-primary">Request for a quote</button>
+                        <button className="btn btn-secondary">Contact Us</button>
                     </div>
                 </div>
             </div>
