@@ -1,5 +1,6 @@
 import React from 'react';
 import BusinessSummery from './BusinessSummery';
+import ContactUs from './ContactUs';
 import Products from './Products';
 import PromoBox from './PromoBox';
 import Reviews from './Reviews';
@@ -40,6 +41,9 @@ const Home = () => {
             </div>
             <div className='py-12'>
                 <PromoBox></PromoBox>
+            </div>
+            <div className='py-12'>
+                <ContactUs></ContactUs>
             </div>
         </div>
     );
