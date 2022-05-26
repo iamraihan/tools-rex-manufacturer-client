@@ -1,6 +1,7 @@
 import React from 'react';
 import BusinessSummery from './BusinessSummery';
 import Products from './Products';
+import PromoBox from './PromoBox';
 import Reviews from './Reviews';
 import PrimaryButton from './Shared/PrimaryButton';
 
@@ -36,6 +37,9 @@ const Home = () => {
             <div className='py-16'>
                 <h2 className='text-3xl font-bold text-center mb-12'>Customer Reviews</h2>
                 <Reviews></Reviews>
+            </div>
+            <div className='py-12'>
+                <PromoBox></PromoBox>
             </div>
         </div>
     );
