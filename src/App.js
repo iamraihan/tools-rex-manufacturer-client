@@ -10,6 +10,7 @@ import MyOrders from './components/Dashboard/MyOrders';
 import MyProfile from './components/Dashboard/MyProfile';
 import Payment from './components/Dashboard/Payment';
 import Home from './components/Home/Home';
+import MyPortfolio from './components/Home/MyPortfolio';
 import Footer from './components/Home/Shared/Footer';
 import Login from './components/Home/Shared/Login';
 import Navbar from './components/Home/Shared/Navbar';
@@ -24,6 +25,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/my-portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/purchase/:id' element={
           <RequireAuth>
             <Purchase></Purchase>

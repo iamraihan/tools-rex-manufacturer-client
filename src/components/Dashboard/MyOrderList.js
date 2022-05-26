@@ -27,7 +27,7 @@ const MyOrderList = ({ order, index, setDeleteOrder }) => {
                             <td>{price}</td>
                             <td>
                                 {
-                                    paid ? <button className="btn btn-success">Paid</button> : <Link to={`/dashboard/payment/${_id}`}> <button className='btn btn-warning mr-3'>Pay</button></Link>
+                                    paid ? <div className="flex"><h2> trnsId: {transactionId}</h2><h2 className="btn btn-success ml-5">Paid</h2></div> : <Link to={`/dashboard/payment/${_id}`}> <button className='btn btn-warning mr-3'>Pay</button></Link>
                                 }
                                 {
                                     !paid && <label onClick={() => { setDeleteOrder(order) }} for="order-delete-confirmation" class="btn btn-error">Cancel</label>
