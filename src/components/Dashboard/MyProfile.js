@@ -8,7 +8,7 @@ const MyProfile = () => {
     console.log(user);
     const email = user?.email
 
-    const { data: profile, isLoading, refetch } = useQuery('profile', () => fetch(`http://localhost:5000/profile/${email}`, {
+    const { data: profile, isLoading, refetch } = useQuery('profile', () => fetch(`https://salty-lake-19490.herokuapp.com/profile/${email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -34,7 +34,7 @@ const MyProfile = () => {
             phone,
             linkedin
         };
-        fetch(`http://localhost:5000/profile/${email}`, {
+        fetch(`https://salty-lake-19490.herokuapp.com/profile/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

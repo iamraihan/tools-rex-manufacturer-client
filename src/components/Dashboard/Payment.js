@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51L0fLRKh4xVgSs665vSEwWGX5mNeOnaqAhi33
 const Payment = () => {
     const { id } = useParams()
     // const [order, setOrder] = useState({})
-    const url = `http://localhost:5000/orders/${id}`
+    const url = `https://salty-lake-19490.herokuapp.com/orders/${id}`
     const { data: order, isLoading, refetch } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
         headers: {

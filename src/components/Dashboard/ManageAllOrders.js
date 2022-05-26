@@ -4,7 +4,7 @@ import ManageAllOrdersDetails from './ManageAllOrdersDetails';
 const ManageAllOrders = () => {
     const [allOrders, setAllOrders] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/orders', {
+        fetch('https://salty-lake-19490.herokuapp.com/orders', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -22,7 +22,7 @@ const AddaReview = () => {
             rating
         }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://salty-lake-19490.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

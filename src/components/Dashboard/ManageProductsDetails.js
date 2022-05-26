@@ -4,7 +4,7 @@ const ManageProductsDetails = ({ product, index }) => {
     const { image, name, _id } = product
     console.log(product);
     const deleteProduct = id => {
-        fetch(`http://localhost:5000/product/${id}`, {
+        fetch(`https://salty-lake-19490.herokuapp.com/product/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',

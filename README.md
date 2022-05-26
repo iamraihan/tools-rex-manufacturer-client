@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Tools Rex
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Website [https://tools-rex.web.app/](https://tools-rex.web.app/).
 
 ## Available Scripts
 

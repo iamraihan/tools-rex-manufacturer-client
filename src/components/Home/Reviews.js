@@ -4,7 +4,7 @@ import ReviewDetails from './ReviewDetails';
 const Reviews = () => {
     const [reviewsUpdate, setReviewsUpdate] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://salty-lake-19490.herokuapp.com/reviews', {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',

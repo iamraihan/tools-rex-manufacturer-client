@@ -15,7 +15,7 @@ const MyOrders = () => {
     const navigate = useNavigate()
     const email = user?.email
     useEffect(() => {
-        fetch(`http://localhost:5000/order/${email}`, {
+        fetch(`https://salty-lake-19490.herokuapp.com/order/${email}`, {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`,
@@ -36,7 +36,7 @@ const MyOrders = () => {
     }, [email, orders, navigate])
 
 
-    // const { data: orders, isLoading, refetch } = useQuery('order', () => fetch(`http://localhost:5000/order/${email}`, {
+    // const { data: orders, isLoading, refetch } = useQuery('order', () => fetch(`https://salty-lake-19490.herokuapp.com/order/${email}`, {
 
     //     method: 'GET',
     //     headers: {

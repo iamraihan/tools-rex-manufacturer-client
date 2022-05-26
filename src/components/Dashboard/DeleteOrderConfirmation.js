@@ -3,7 +3,7 @@ import React from 'react';
 const DeleteOrderConfirmation = ({ deleteOrder, setDeleteOrder }) => {
     const { _id, productName } = deleteOrder
     const deleteHandler = id => {
-        fetch(`http://localhost:5000/order/${id}`, {
+        fetch(`https://salty-lake-19490.herokuapp.com/order/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
