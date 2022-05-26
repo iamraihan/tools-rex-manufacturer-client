@@ -1,6 +1,6 @@
 # Tools Rex
 
-Live Website [https://tools-rex.web.app/](https://tools-rex.web.app/).
+## Live Website [https://tools-rex.web.app/](https://tools-rex.web.app/).
 
 ## Available Scripts
 

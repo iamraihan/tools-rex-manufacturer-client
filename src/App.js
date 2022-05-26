@@ -9,6 +9,7 @@ import ManageProducts from './components/Dashboard/ManageProducts';
 import MyOrders from './components/Dashboard/MyOrders';
 import MyProfile from './components/Dashboard/MyProfile';
 import Payment from './components/Dashboard/Payment';
+import Blogs from './components/Home/Blogs';
 import Home from './components/Home/Home';
 import MyPortfolio from './components/Home/MyPortfolio';
 import Footer from './components/Home/Shared/Footer';
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/my-portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/purchase/:id' element={
           <RequireAuth>
             <Purchase></Purchase>
