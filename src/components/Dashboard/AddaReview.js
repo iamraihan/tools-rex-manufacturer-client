@@ -1,9 +1,11 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
 
 const AddaReview = () => {
     const [user, loading, error] = useAuthState(auth);
+    const navigate = useNavigate()
     const reviewHandler = event => {
         event.preventDefault();
         const name = user?.displayName
@@ -31,6 +33,8 @@ const AddaReview = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                event.target.reset()
+                navigate('/')
 
             })
 

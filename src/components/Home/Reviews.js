@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import ReviewDetails from './ReviewDetails';
 
 const Reviews = () => {
-    const [revivesUpdate, setReviewsUpdate] = useState([])
+    const [reviewsUpdate, setReviewsUpdate] = useState([])
     useEffect(() => {
         fetch('http://localhost:5000/reviews', {
             method: 'GET',
@@ -14,8 +15,10 @@ const Reviews = () => {
             .then(data => setReviewsUpdate(data))
     }, [])
     return (
-        <div>
-            <h2>{revivesUpdate.length}</h2>
+        <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5  max-w-screen-xl mx-auto'>
+            {
+                reviewsUpdate.map(review => <ReviewDetails key={review._id} review={review}></ReviewDetails>)
+            }
         </div>
     );
 };

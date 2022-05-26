@@ -28,10 +28,11 @@ const Home = () => {
                 </div>
             </div>
             <div className='py-28'>
-                <Reviews></Reviews>
-            </div>
-            <div className='py-28'>
                 <BusinessSummery></BusinessSummery>
+            </div>
+            <div className='py-16'>
+                <h2 className='text-3xl font-bold text-center mb-12'>Customer Reviews</h2>
+                <Reviews></Reviews>
             </div>
         </div>
     );
