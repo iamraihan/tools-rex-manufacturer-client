@@ -14,6 +14,7 @@ import MyPortfolio from './components/Home/MyPortfolio';
 import Footer from './components/Home/Shared/Footer';
 import Login from './components/Home/Shared/Login';
 import Navbar from './components/Home/Shared/Navbar';
+import NotFound from './components/Home/Shared/NotFound';
 import Register from './components/Home/Shared/Register';
 import RequireAdmin from './components/Home/Shared/RequireAdmin';
 import RequireAuth from './components/Home/Shared/RequireAuth';
@@ -57,6 +58,7 @@ function App() {
           </RequireAdmin>}>
           </Route>
         </Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
