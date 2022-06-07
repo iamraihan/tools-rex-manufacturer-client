@@ -32,7 +32,8 @@ const MyPortfolio = () => {
                     <div className="card w-96 bg-base-100 shadow-xl">
                         <div className="card-body">
                             <h2 className="card-title">Best Project I have done.</h2>
-                            <p className='text-xl'>Front End Skill: HTML, CSS, JavaScript</p>
+                            <p className='text-xl btn-link btn-active'><a href="https://grocery-management-1f816.web.app">Grocery management</a></p>
+                            <p className='text-xl btn-link btn-active'><a href="https://doctor-hoffman.web.app">Doctor Hoffman</a></p>
 
                         </div>
                     </div>
