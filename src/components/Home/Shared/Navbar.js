@@ -23,7 +23,9 @@ const Navbar = () => {
         <NavLink to="/blogs">Blog</NavLink>
       </li>
       <li className="ml-2">
-        <NavLink to="/my-portfolio">My Portfolio</NavLink>
+        <a href="https://raihanali.netlify.app" target="_blank">
+          My Portfolio
+        </a>
       </li>
       <li className="ml-2">
         <NavLink to="/others">Others</NavLink>
