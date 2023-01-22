@@ -11,7 +11,7 @@ const Purchase = () => {
   const [updateQuantity, setUpdateQuantity] = useState(0);
   // const [update, setUpdate] = useState(0)
   useEffect(() => {
-    fetch(`https://salty-lake-19490.herokuapp.com/products/${id}`)
+    fetch(`https://tools-rex-backend.onrender.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id, updateQuantity]);
@@ -33,7 +33,7 @@ const Purchase = () => {
     // minimum = minimum + product.minimum
     // console.log(minimum);
     // console.log(product.minimum);
-    // fetch(`https://salty-lake-19490.herokuapp.com/products/${id}`, {
+    // fetch(`https://tools-rex-backend.onrender.com/products/${id}`, {
     //     method: 'PUT',
     //     body: JSON.stringify({ minimum: minimum }),
     //     headers: {
@@ -62,7 +62,7 @@ const Purchase = () => {
 
     // console.log(available);
     // console.log(product.minimum);
-    // fetch(`https://salty-lake-19490.herokuapp.com/products/${id}`, {
+    // fetch(`https://tools-rex-backend.onrender.com/products/${id}`, {
     //     method: 'PUT',
     //     body: JSON.stringify({ available: available }),
     //     headers: {
@@ -97,7 +97,7 @@ const Purchase = () => {
       phone: phone,
     };
     console.log(order);
-    fetch("https://salty-lake-19490.herokuapp.com/order", {
+    fetch("https://tools-rex-backend.onrender.com/order", {
       method: "POST",
       body: JSON.stringify(order),
       headers: {

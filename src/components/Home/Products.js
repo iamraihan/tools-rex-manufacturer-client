@@ -4,7 +4,7 @@ import Product from "./Product";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://salty-lake-19490.herokuapp.com/products")
+    fetch("https://tools-rex-backend.onrender.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
