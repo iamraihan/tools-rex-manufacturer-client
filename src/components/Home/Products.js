@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Product from "./Product";
+import Loading from "./Shared/Loading";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -12,12 +13,15 @@ const Products = () => {
   return (
     <div>
       {!products.length && (
-        <p
-          className="text-red-500 text-4xl text-center font-semibold
-      "
-        >
-          If the tool doesn't show please reload again
-        </p>
+        <div>
+          <Loading />
+          <p
+            className="text-red-500 text-4xl text-center font-semibold
+        "
+          >
+            If the tool doesn't show please reload again
+          </p>
+        </div>
       )}
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 max-w-screen-xl mx-auto">
         {
