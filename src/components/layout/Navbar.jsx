@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Menu, ShoppingCart, User, X } from "react-feather";
 import { NavLink, useLocation } from "react-router-dom";
 
@@ -12,10 +12,15 @@ const Navbar = () => {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
   const [cart, setCart] = useState(0);
-  console.log("setCart: ", setCart);
+
   const hamburgerHandler = () => {
     setOpen((open) => !open);
   };
+  // this is just for remove warning
+  useEffect(() => {
+    if (cart <= 0) return;
+    setCart(cart + 1);
+  }, [cart]);
   return (
     <>
       <div className="bg-white py-5 hidden sm:block ">
@@ -59,11 +64,12 @@ const Navbar = () => {
         </div>
       </div>
       {/* Mobile  */}
-      <div className="relative bg-white block sm:hidden">
+      {/* if need to animation here just left -100% then when click on hamburger in make left 0  */}
+      <div className="relative bg-white block sm:hidden  ">
         {open && (
           <div className="">
-            <div className="bg-dark text-white w-screen h-screen pt-5 z-10 absolute transition-all  delay-300">
-              <ul className="flex justify-start  gap-4 flex-col container mx-auto">
+            <div className="bg-dark text-white w-screen h-screen pt-5 z-10 absolute  ">
+              <ul className="flex justify-start  gap-4 flex-col container mx-auto ">
                 {menus.map((item, index) => (
                   <li key={item.id}>
                     <NavLink
