@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Menu, ShoppingCart, User, X } from "react-feather";
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const menus = [
   { id: 1, menu: "Home", route: "/" },
@@ -8,18 +8,19 @@ const menus = [
   { id: 3, menu: "Contact", route: "/contact" },
   { id: 4, menu: "Dashboard", route: "/dashboard" },
 ];
-const icons = [<User />, <ShoppingCart />];
 const Navbar = () => {
+  const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
+  const [cart, setCart] = useState(0);
+  console.log("setCart: ", setCart);
   const hamburgerHandler = () => {
     setOpen((open) => !open);
   };
-
   return (
     <>
       <div className="bg-white py-5 hidden sm:block ">
         <div className="container mx-auto hidden sm:block">
-          <div className="flex justify-between   ">
+          <div className="flex justify-between  items-center ">
             <div className="logo">
               <p>Logo</p>
             </div>
@@ -27,20 +28,31 @@ const Navbar = () => {
               <ul className="flex items-center  gap-4">
                 {menus.map((item, index) => (
                   <li key={item.id}>
-                    <Link className="menu-items" to={item.route}>
+                    <NavLink
+                      to={item.route}
+                      className={` ${
+                        pathname === item.route ? "text-pink-10" : "menu-items"
+                      }`}
+                    >
                       {item.menu}
-                    </Link>
+                    </NavLink>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="">
               <ul className="flex items-center gap-3">
-                {icons.map((icon, index) => (
-                  <li key={index} className="menu-items">
-                    {icon}
-                  </li>
-                ))}
+                <li className="menu-items hover:bg-pink-10 p-2 hover:text-white rounded-full ">
+                  <User />
+                </li>
+                <li className="group menu-items relative hover:bg-pink-10 p-2 hover:text-white rounded-full ">
+                  <ShoppingCart />
+                  <span
+                    className={`group-hover:bg-white group-hover:text-dark  bg-pink-10 rounded-full text-white grid justify-center items-center absolute bottom-[2px] right-[2px] px-1.5`}
+                  >
+                    {cart}
+                  </span>
+                </li>
               </ul>
             </div>
           </div>
@@ -50,13 +62,18 @@ const Navbar = () => {
       <div className="relative bg-white block sm:hidden">
         {open && (
           <div className="">
-            <div className="bg-dark text-white w-screen h-screen pt-5 z-10 absolute">
+            <div className="bg-dark text-white w-screen h-screen pt-5 z-10 absolute transition-all  delay-300">
               <ul className="flex justify-start  gap-4 flex-col container mx-auto">
                 {menus.map((item, index) => (
                   <li key={item.id}>
-                    <Link className="menu-items text-white" to={item.route}>
+                    <NavLink
+                      to={item.route}
+                      className={` text-white ${
+                        pathname === item.route ? "text-pink-10" : "menu-items"
+                      }`}
+                    >
                       {item.menu}
-                    </Link>
+                    </NavLink>
                   </li>
                 ))}
               </ul>
@@ -73,12 +90,18 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex justify-center gap-5 container ">
-            <ul className="flex justify-center-center gap-5 items-center">
-              {icons.map((icon, index) => (
-                <li key={index} className="menu-items">
-                  {icon}
-                </li>
-              ))}
+            <ul className="flex justify-center-center gap-3 items-center">
+              <li className="menu-items hover:bg-pink-10 p-2 hover:text-white rounded-full ">
+                <User />
+              </li>
+              <li className="group menu-items relative hover:bg-pink-10 p-2 hover:text-white rounded-full ">
+                <ShoppingCart />
+                <span
+                  className={`group-hover:bg-white group-hover:text-dark  bg-pink-10 rounded-full text-white grid justify-center items-center absolute bottom-[2px] right-[2px] px-1.5`}
+                >
+                  {cart}
+                </span>
+              </li>
             </ul>
           </div>
         </div>
