@@ -1,33 +1,15 @@
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import AddAProduct from './components/Dashboard/AddAProduct';
-import AddaReview from './components/Dashboard/AddaReview';
-import Dashboard from './components/Dashboard/Dashboard';
-import MakeAdmin from './components/Dashboard/MakeAdmin';
-import ManageAllOrders from './components/Dashboard/ManageAllOrders';
-import ManageProducts from './components/Dashboard/ManageProducts';
-import MyOrders from './components/Dashboard/MyOrders';
-import MyProfile from './components/Dashboard/MyProfile';
-import Payment from './components/Dashboard/Payment';
-import Blogs from './components/Home/Blogs';
-import Home from './components/Home/Home';
-import MyPortfolio from './components/Home/MyPortfolio';
-import Footer from './components/Home/Shared/Footer';
-import Login from './components/Home/Shared/Login';
-import Navbar from './components/Home/Shared/Navbar';
-import NotFound from './components/Home/Shared/NotFound';
-import Register from './components/Home/Shared/Register';
-import RequireAdmin from './components/Home/Shared/RequireAdmin';
-import RequireAuth from './components/Home/Shared/RequireAuth';
-import Purchase from './components/Purchase/Purchase';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
 
+import Navbar from "./components/layout/Navbar";
+import Home from "./pages/home/index";
 function App() {
   return (
-    <div>
-      <Navbar></Navbar>
+    <div className="font-Nunito">
+      <Navbar />
       <Routes>
-        <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/my-portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
+        <Route path="/" element={<Home />}></Route>
+        {/* <Route path='/my-portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/purchase/:id' element={
           <RequireAuth>
@@ -59,10 +41,10 @@ function App() {
             <ManageAllOrders></ManageAllOrders>
           </RequireAdmin>}>
           </Route>
-        </Route>
-        <Route path='*' element={<NotFound></NotFound>}></Route>
+        </Route> */}
+        {/* <Route path="*" element={<NotFound></NotFound>}></Route> */}
       </Routes>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   );
 }

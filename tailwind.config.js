@@ -1,30 +1,45 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
-  daisyui: {
-    themes: [
-      {
-        light: {
-          primary: "#ffc10a",
+  content: [
+    // app directory
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
 
-          secondary: "#151515",
+    // Or if using `src` directory:
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    screens: {
+      sm: "640px",
 
-          accent: "#f7f7f7",
+      md: "768px",
 
-          neutral: "#C6FFE0",
+      lg: "1024px",
 
-          info: "#eeeeee",
+      xl: "1200px",
+    },
 
-          success: "#36D399",
-
-          warning: "#FBBD23",
-
-          error: "#F87272",
-          "base-100": "#ffffff",
+    container: {
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1rem",
+        lg: "1rem",
+        xl: "1rem",
+        "2xl": "1rem",
+      },
+    },
+    extend: {
+      fontFamily: {
+        Nunito: ["Nunito Sans", "sans-serif"],
+      },
+      colors: {
+        dark: "#363636",
+        pink: {
+          10: "#E44A7A",
         },
       },
-      // "dark",
-      // "cupcake",
-    ],
+    },
   },
-  plugins: [require("daisyui")],
-}
+  plugins: [],
+};
