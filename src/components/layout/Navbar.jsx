@@ -23,7 +23,7 @@ const Navbar = () => {
   }, [cart]);
   return (
     <>
-      <div className="bg-white py-5 hidden sm:block ">
+      <div className="bg-white py-5 hidden sm:block sticky top-0">
         <div className="container mx-auto hidden sm:block">
           <div className="flex justify-between  items-center ">
             <div className="logo">
